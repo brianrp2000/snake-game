@@ -6,24 +6,24 @@ public class Tail extends BodyPart{
 
     @Override
     public void setComponents(JFrame frame) {
-        buildComponent(CELL_SIDE + (CELL_SIDE/2) - CELL_PADDING,
-                CELL_SIDE + CELL_PADDING,
-                CELL_SIDE/2,
-                CELL_SIDE - 2*CELL_PADDING,
+        buildComponent(CELL_SIZE + (CELL_SIZE /2) - CELL_PADDING,
+                CELL_SIZE + CELL_PADDING,
+                CELL_SIZE /2,
+                CELL_SIZE - 2*CELL_PADDING,
                 LIME_GREEN,
                 frame);
 
-        buildComponent(CELL_SIDE + CELL_PADDING + CELL_SIDE/6,
-                CELL_SIDE  + CELL_SIDE/6,
-                CELL_SIDE - CELL_SIDE/3,
-                CELL_SIDE - CELL_SIDE/3,
+        buildComponent(CELL_SIZE + CELL_PADDING + CELL_SIZE /6,
+                CELL_SIZE + CELL_SIZE /6,
+                CELL_SIZE - CELL_SIZE /3,
+                CELL_SIZE - CELL_SIZE /3,
                 LIME_GREEN,
                 frame);
 
-        buildComponent(CELL_SIDE + CELL_PADDING,
-                CELL_SIDE + CELL_SIDE/3,
-                CELL_SIDE/3,
-                CELL_SIDE/3,
+        buildComponent(CELL_SIZE + CELL_PADDING,
+                CELL_SIZE + CELL_SIZE /3,
+                CELL_SIZE /3,
+                CELL_SIZE /3,
                 LIME_GREEN,
                 frame);
     }

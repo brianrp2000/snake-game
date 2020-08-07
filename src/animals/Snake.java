@@ -30,13 +30,12 @@ public class Snake implements Movable {
             for (Component aComponent : bodyPart.getComponents()){
                 aComponent.getPoint().x += xSpeed;
                 move(frame);
+                aComponent.setLevel(1);
                 aComponent.draw(frame);
-                frame.getContentPane().add(aComponent.getLabel(),1);
             }
         };
         // Allocate a Timer to run updateTask's actionPerformed() after every delay msec
         new Timer(UPDATE_INTERVAL, updateTask).start();
-
     }
 
     @Override

@@ -8,28 +8,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Component implements Drawable, Constants {
-    private final JLabel label;
-    private Color color;
-    private Point point;
-    private Dimension dimension;
-    public int xSpeed = 10;
-    public int ySpeed = 10;
+    protected int level;
+    protected JLabel label;
+    protected Point point;
+    protected Dimension dimension;
 
-     public Component(){
-         label = new JLabel();
-         point = new Point(0,0);
-         dimension = new Dimension(100, 100);
-         color = Color.green;
-     }
-     public Component(@NotNull Rectangle rectangle){
-         label = new JLabel();
-         point = rectangle.getLocation();
-         dimension = rectangle.getSize();
-     }
-
-     public void setColor(Color color){
-         this.color = color;
-     }
+     public void setLevel(int level) {
+        this.level = level;
+    }
      public void setPoint(Point point){
          this.point = point;
      }
@@ -37,13 +23,16 @@ public class Component implements Drawable, Constants {
          this.dimension = dimension;
      }
 
+     public int getLevel() {
+        return level;
+    }
      public Point getPoint(){return point;}
      public JLabel getLabel(){
          return label;
      }
 
-     public void createLabel(){
-         label.setBackground(color);
+     public  void createLabel(){
+         label = new JLabel();
          label.setOpaque(true);
          label.setBounds(new Rectangle(point, dimension));
      }
@@ -51,16 +40,16 @@ public class Component implements Drawable, Constants {
     @Override
     public void draw(JFrame frame) {
         createLabel();
-        frame.getContentPane().add(label);
+        frame.getContentPane().add(label, level);
         frame.revalidate();
         frame.repaint();
     }
 
     private boolean isMoving(Point point){
-        if (point.x > SCREEN_WIDTH - CELL_SIDE || point.x < 0) {
+        if (point.x > SCREEN_WIDTH - CELL_SIZE || point.x < 0) {
             return false;
         }
-        if (point.y > SCREEN_HEIGHT - CELL_SIDE || point.y < 0) {
+        if (point.y > SCREEN_HEIGHT - CELL_SIZE || point.y < 0) {
             return false;
         }
         return true;

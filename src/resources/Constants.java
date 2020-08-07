@@ -6,7 +6,7 @@ public interface Constants {
     String TITLE = "Snake Game";
     int SCREEN_WIDTH = 600;
     int SCREEN_HEIGHT = 600;
-    int CELL_SIDE = SCREEN_WIDTH * 5 / 100;
+    int CELL_SIZE = SCREEN_WIDTH * 5 / 100;
     int CELL_PADDING = 2;
 
     Color BLACK = new Color(0,0,0);

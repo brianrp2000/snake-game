@@ -33,9 +33,9 @@ public abstract class Fruit implements Spawnable, Drawable, Constants {
 
     @Override
     public void draw(JFrame frame) {
-        Component aComponent = new Component();
+        /*Component aComponent = new Component();
         aComponent.setDimension(dimension);
         aComponent.setColor(Constants.RED);
-        aComponent.draw(frame);
+        aComponent.draw(frame);*/
     }
 }

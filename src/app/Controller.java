@@ -5,6 +5,7 @@ import background.Board;
 import resources.Constants;
 
 import java.awt.*;
+import java.net.URL;
 import javax.swing.*;
 
 public class Controller implements Constants {
@@ -44,7 +45,27 @@ public class Controller implements Constants {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        new Snake(frame);
+        String imgCrossFilename = "images/tail.png";
+        ImageIcon iconCross = null;
+        Image imgCross;
+        URL imgURL = getClass().getClassLoader().getResource(imgCrossFilename);
+
+        if (imgURL != null) {
+            iconCross = new ImageIcon(imgURL);
+        } else {
+            System.out.println("Couldn't find file: " + imgCrossFilename);
+        }
+
+        assert iconCross != null;
+        imgCross = iconCross.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+
+        JLabel label = new JLabel();
+        label.setBounds(60, 30, 30, 30);
+        //label.setOpaque(true);
+        label.setIcon(new ImageIcon(imgCross));
+
+        frame.getContentPane().add(label);
+        //new Snake(frame);
         new Board(frame);
     }
 }

@@ -14,26 +14,26 @@ public class Head extends BodyPart {
                 frame);*/
         //build overall shape of the head
         //just a square
-        buildComponent(3*CELL_SIDE + CELL_PADDING,
-                CELL_SIDE + CELL_PADDING,
-                CELL_SIDE - CELL_PADDING*2,
-                CELL_SIDE - CELL_PADDING*2,
+        buildComponent(3* CELL_SIZE + CELL_PADDING,
+                CELL_SIZE + CELL_PADDING,
+                CELL_SIZE - CELL_PADDING*2,
+                CELL_SIZE - CELL_PADDING*2,
                 LIME_GREEN,
                 frame);
 
         //Build upper eye
-        buildComponent(3*CELL_SIDE + CELL_SIDE - CELL_SIDE/3-CELL_PADDING,
-                CELL_SIDE + CELL_SIDE / 4,
-                CELL_SIDE / 5,
-                CELL_SIDE / 5,
+        buildComponent(3* CELL_SIZE + CELL_SIZE - CELL_SIZE /3-CELL_PADDING,
+                CELL_SIZE + CELL_SIZE / 4,
+                CELL_SIZE / 5,
+                CELL_SIZE / 5,
                 AZURE,
                 frame);
 
         //Build lower eye
-        buildComponent(3*CELL_SIDE + CELL_SIDE - CELL_SIDE/3 - CELL_PADDING,
-                CELL_SIDE + CELL_SIDE / 2 + CELL_PADDING,
-                CELL_SIDE / 5,
-                CELL_SIDE / 5,
+        buildComponent(3* CELL_SIZE + CELL_SIZE - CELL_SIZE /3 - CELL_PADDING,
+                CELL_SIZE + CELL_SIZE / 2 + CELL_PADDING,
+                CELL_SIZE / 5,
+                CELL_SIZE / 5,
                 AZURE,
                 frame);
     }
